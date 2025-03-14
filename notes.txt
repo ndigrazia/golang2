@@ -1,0 +1,44 @@
+Go - Download and install
+----------------------
+https://go.dev/doc/install
+
+
+Standard library
+----------------------
+https://pkg.go.dev/std
+
+
+Playground
+----------------------
+ttps://play.golang.org/
+
+
+
+Creating a go.mod File
+----------------------
+In order to do this we must create a go.mod file. Otherwise, you will see an error thrown:
+
+go: go.mod file not found in current directory or any parent directory; see 'go help modules'
+
+Inside the cards project directory run the following:
+
+go mod init cards
+
+Then, you will be able to use the run test function from within VSCode, and/or run go test from the terminal.
+
+
+
+
+Errorf call has arguments but no formatting directives
+----------------------
+In the upcoming lecture, we will be running some tests using Errorf. Omitting a formatting directive will now cause the tests to fail, so, we will need to add these right away.
+
+Note - this directive was originally added at the end of the lecture.
+
+When running your tests starting around the 8:00 timestamp, change the following:
+
+t.Errorf("Expected deck length of 16, but got", len(d))
+
+to this:
+
+t.Errorf("Expected deck length of 16, but got %v", len(d))
